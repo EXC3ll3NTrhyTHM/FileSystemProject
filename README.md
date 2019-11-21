@@ -1,7 +1,32 @@
-# FileSystemProject
-We would like to implement a system that keeps track of folders and the files they contain. A folder has a name, a size (in bytes), and a collection of files. A folder may contain multiple folders and multiple files. A file has a name and a size. Whenever a file is added to or deleted, the size of the parent folder changes. Similarly, whenever a folder (containing files) is deleted, the size of the parent folder changes. However, adding a new (empty) folder doesn’t change the size of its parent folder. 
-• Requirements: Use mainly self-balancing binary search trees to keep track of the data in the project.  You are welcome to use these classes: AVL_Tree, red_black_tree   
- 
-• You don’t have to write a menu-based program. You can simply test your functions manually in the main function. • Implement functions that support the following: o void add_folder(string path, string folder_name) The function adds a folder. The folder is added inside a parent folder. The function searches for the parent folder using the given path. The path is a hierarchy of folders where the last folder in the hierarchy is the parent of the to-be-added folder. Here is an example of a path: documents/programming/data_structures.   The root folder is documents, and it contains folder programming, which contains the data_structures folder. The parent of the root folder is NULL.  o void delete_folder(string path, string folder_name) This function deletes a folder with a given name. It searches for parent folder of the given folder using the given path.  Notice: deleting a folder that contains files changes the size of the parent folder. o void add_file(string path, string file_name, int size) This function adds a file with a given name. It searches for parent folder of the file using the given path. Notice: adding a file changes the size of the parent folder. o File get_file(string path, string file_name) This function finds a file with a given name. It searches for the file using the given path. o list<File> get_files(string path, string file_name) This function finds all files which have names that start with the given parameter (file_name). It searches for the files using the given path. 
- 
-o void delete_file(string path, string file_name) The function deletes the file with the given name. The location of the file is specified in the path. Deleting the file changes the size of its parent folder. 
+custom clases:
+1. Folder
+Fields
+- Name(string)
+- Size(int)
+- Files(vector<file>)
+Methods
+- void add_folder(string path, string folder_name)
+- void delete_folder(string path, string folder_name)
+- void add_file(string path, string file_name, int size)
+- File get_file(string path, string file_name)
+- list<File> get_files(string path, string file_name)
+
+2. File
+Fields
+- Name (string)
+- Size (int)
+
+Constraints:
+- have to mainly self-balancing binary search tree
+- AVL_Tree
+- dont need menu based interaction/can use main function to test project
+
+Questions:
+- can files be stored in a vector inside the folder or does that also have to be a tree
+- do we need to submit a team report as well as a individual report
+
+weeks before deadline:
+- Dec 13th
+- 5 weeks
+
+Nov 21st meet again to discuss project roles and conduct
