@@ -43,5 +43,6 @@ int main()
 	cout << animals.find_file(mammals, hippo) << endl;
 	cout << animals.find_file(reptiles, lizard) << endl;
 	cout << animals.find_file(human) << endl;
+	cout << animals.find_file(hippo) << endl;
 	cout << animals.get_size() << endl;
 }

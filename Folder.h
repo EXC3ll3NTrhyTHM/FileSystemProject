@@ -42,7 +42,7 @@ public:
 
 	File find_file(AVLNode<File>* local_root, File target) {
 		if (local_root == NULL) {
-			File fileNull("No Files Available", 0);
+			File fileNull("File not found", 0);
 			return fileNull;
 		}
 		if (target < local_root->data)
