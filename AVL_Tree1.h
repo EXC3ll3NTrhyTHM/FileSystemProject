@@ -58,6 +58,10 @@ public:
 			return true;
 	}
 
+	AVLNode<Item_Type>* get_root() {
+		return this->root;
+	}
+
 
 	virtual bool insert(const Item_Type& item) {
 		return insert(this->root, item);

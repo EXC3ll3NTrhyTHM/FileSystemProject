@@ -6,15 +6,42 @@
 
 int main()
 {
-	Folder folder1("Animals");
-	File file1("Hippo", 34);
-	File file2("Mouse", 3);
+	Folder animals("Animals");
+	Folder mammals("Mammals");
+	Folder reptiles("Reptiles");
+	File lizard("Lizard", 4);
+	File hippo("Hippo", 34);
+	File mouse("Mouse", 3);
+	File human("Human", 18);
 
-	cout << folder1.get_name();
+	// Test for add_file method
+	mammals.add_file(hippo);
+	reptiles.add_file(lizard);
 
-	folder1.add_file(file1);
+	cout << mammals.get_size() << endl;
+	cout << reptiles.get_size() << endl;
 
-	cout << folder1.get_size();
-	folder1.add_file(file2);
-	cout << folder1.get_size();
+	mammals.add_file(mouse);
+
+	cout << mammals.get_size() << endl;
+
+	// Test for find_file method
+	cout << mammals.find_file(hippo) << endl;
+	cout << reptiles.find_file(lizard) << endl;
+
+	// Test for delete_file method
+	mammals.delete_file(mouse);
+
+	cout << mammals.get_size() << endl;
+
+	// Test for add_folder method
+	animals.add_folder(mammals);
+	animals.add_folder(reptiles);
+	animals.add_file(human);
+
+	// Test for find_file method for file inside of folder
+	cout << animals.find_file(mammals, hippo) << endl;
+	cout << animals.find_file(reptiles, lizard) << endl;
+	cout << animals.find_file(human) << endl;
+	cout << animals.get_size() << endl;
 }
