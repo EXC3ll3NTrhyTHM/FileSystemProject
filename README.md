@@ -1,4 +1,4 @@
-custom clases:
+custom classes:
 1. Folder
 Fields
 - Name(string)
