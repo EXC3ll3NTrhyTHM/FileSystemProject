@@ -4,11 +4,12 @@ Fields
 - Name(string)
 - Size(int)
 - Files(AVL_Tree<file>)
+- Folder(AVL_Tree<folder>)
 Methods
-- void add_folder(string path, string folder_name)
-- void delete_folder(string path, string folder_name)
-- void add_file(string path, string file_name, int size)
-- File get_file(string path, string file_name)
+- void add_folder(Folder folder)
+- void delete_folder(Folder folder)
+- void add_file(File file)
+- File find_file(File file)
 - list<File> get_files(string path, string file_name)
 Class constructor for folder class
 
