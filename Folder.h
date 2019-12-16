@@ -97,6 +97,7 @@ vector<File> Folder::find_files(string name) {
 	return find_files(name, files.get_root(), files_found);
 }
 
+// If a file is within a folder then you must provide the folder that the file is within
 vector<File> Folder::find_files(string name, Folder folder) {
 	vector<File> files_found;
 	return find_files(name, folder.files.get_root(), files_found);
@@ -110,6 +111,7 @@ vector<File> Folder::find_files(string name, AVLNode<File>* local_root, vector<F
 	}
 	else if (local_root->data.name.find(name) != string::npos) {
 		file_list.push_back(local_root->data);
+		// Even if a file is found with the name given the function still needs to check the rest of the tree for the file name that is why the if statements below are not preceeded by else
 		if (local_root->left != NULL) {
 			file_list = find_files(name, local_root->left, file_list);
 		}
